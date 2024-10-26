@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="MauiMediaElementBugDemo.SplashScreenPage"
+             Title="SplashScreenPage">
+    <Grid>
+        <toolkit:MediaElement x:Name="mediaElement"
+                                ShouldAutoPlay="True"
+                                MediaEnded="OnMediaEnded"
+                                VerticalOptions="Fill"
+                                HorizontalOptions="Fill"
+                                Source = "Videos/splashanimation.mp4"
+                                Aspect="Fill"
+                                Scale="1.5" />
+        
+        <toolkit:MediaElement x:Name="mediaElement2"
+                                ShouldAutoPlay="False"
+                                ShouldShowPlaybackControls="True"
+                                Source="Videos/onboardingvideo1.mp4"
+                                Aspect="Fill"
+                                MediaEnded="mediaElement2_MediaEnded" />
+            
+
+        <Button x:Name="getStartedButton"
+            Text="Get Started"
+            BackgroundColor="#428bca"
+            TextColor="White"
+            WidthRequest="200"
+            VerticalOptions="End"
+            HorizontalOptions="Center"
+            Clicked="Handle_Clicked" ></Button>
+
+        <ActivityIndicator x:Name="spinner"
+                            Color="White"
+                            VerticalOptions="End"
+                            HorizontalOptions="Center" />
+                               
+
+            
+    </Grid>
+</ContentPage>
